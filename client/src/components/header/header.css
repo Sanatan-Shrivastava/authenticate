@@ -44,7 +44,7 @@ header ul li img {
 
 .drop-nav .dropdown {
     position: absolute;
-    background: #282c34;
+    background: #ffffff;
     width: 100%;
     width: calc(100% + 30px);
     top: 50px;
