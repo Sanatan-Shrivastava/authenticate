@@ -2,7 +2,6 @@ const Users = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const sendMail = require('./sendMail')
-
 const {google} = require('googleapis')
 const {OAuth2} = google.auth
 const fetch = require('node-fetch')
@@ -40,7 +39,7 @@ const userCtrl = {
             sendMail(email, url, "Verify your email address")
 
 
-            res.json({msg: "Register Success! Please activate your email to start."})
+            res.json({msg: "Register Successful! Please activate your Email ID to start."})
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
@@ -61,7 +60,7 @@ const userCtrl = {
 
             await newUser.save()
 
-            res.json({msg: "Account has been activated!"})
+            res.json({msg: "Account has been activated, Login now at stige login portal!"})
 
         } catch (err) {
             return res.status(500).json({msg: err.message})
@@ -71,7 +70,7 @@ const userCtrl = {
         try {
             const {email, password} = req.body
             const user = await Users.findOne({email})
-            if(!user) return res.status(400).json({msg: "This email does not exist."})
+            if(!user) return res.status(400).json({msg: "This Email ID does not exist."})
 
             const isMatch = await bcrypt.compare(password, user.password)
             if(!isMatch) return res.status(400).json({msg: "Password is incorrect."})
@@ -83,7 +82,7 @@ const userCtrl = {
                 maxAge: 7*24*60*60*1000 // 7 days
             })
 
-            res.json({msg: "Login success!"})
+            res.json({msg: "Login successful!"})
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
@@ -107,13 +106,13 @@ const userCtrl = {
         try {
             const {email} = req.body
             const user = await Users.findOne({email})
-            if(!user) return res.status(400).json({msg: "This email does not exist."})
+            if(!user) return res.status(400).json({msg: "Alas! Email ID does not exist."})
 
             const access_token = createAccessToken({id: user._id})
             const url = `${CLIENT_URL}/user/reset/${access_token}`
 
             sendMail(email, url, "Reset your password")
-            res.json({msg: "Re-send the password, please check your email."})
+            res.json({msg: "Password re-sent. Check your entered email-ID"})
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }

@@ -71,7 +71,7 @@ function Login() {
             <label htmlFor="email">Email Address</label>
             <input
               type="text"
-              placeholder="Enter email address"
+              placeholder="Enter your email address"
               id="email"
               value={email}
               name="email"
@@ -83,7 +83,7 @@ function Login() {
             <label htmlFor="password">Password</label>
             <input
               type="password"
-              placeholder="Enter password"
+              placeholder="********"
               id="password"
               value={password}
               name="password"
@@ -97,12 +97,12 @@ function Login() {
           </div>
         </form>
 
-        <div className="hr">Or Login With</div>
+        <div className="hr">Now you can login with Google <br/> Wait for 5 seconds after selecting account!</div>
 
         <div className="social">
           <GoogleLogin
             clientId="228467480178-ivnfu5l6g19qn9u0oav99ukcqaq75e05.apps.googleusercontent.com"
-            buttonText="Login with google"
+            buttonText="Sign in"
             onSuccess={responseGoogle}
             cookiePolicy={"single_host_origin"}
           />
@@ -110,7 +110,7 @@ function Login() {
         </div>
 
         <p>
-          New Customer? <Link to="/register">Register</Link>
+          Didn't register already? <Link to="/register">Register</Link>
         </p>
       </div>
     );

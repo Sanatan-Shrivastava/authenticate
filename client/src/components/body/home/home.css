@@ -1,6 +1,7 @@
 .home_page {
     min-height: calc(100vh - 100px);
     padding: 20px;
+    text-align: center;
 }
 
 .home_page h2 {
