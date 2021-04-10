@@ -1,7 +1,7 @@
 .login_page {
     max-width: 500px;
     margin: auto;
-    color: #444;
+    color: rgb(0, 0, 0);
     padding: 0 15px;
 }
 
@@ -16,7 +16,8 @@
     width: 100%;
     height: 45px;
     margin: 10px 0;
-    border: 2px solid #777;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 1rem;
     outline: none;
     padding: 0 10px;
 }
@@ -39,6 +40,7 @@
     background: black;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    border-radius: 1rem;
     margin-right: 10px;
 }
 

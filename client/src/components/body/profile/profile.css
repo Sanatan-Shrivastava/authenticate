@@ -32,15 +32,14 @@
 .profile_page .col-left .avatar span {
     position: absolute;
     bottom: -100%;
-    left: 0;
     width: 100%;
     height: 50%;
     background: #fff8;
     text-align: center;
     font-weight: 400;
     text-transform: uppercase;
-    color: rgb(255, 140, 45);
-    transition: 0.3s ease-in-out;
+    left: 0;
+    color: rgb(0, 0, 0);
 }
 
 .profile_page .col-left .avatar:hover span {
@@ -87,6 +86,7 @@
     padding: 10px 25px;
     text-transform: uppercase;
     letter-spacing: 1.4px;
+    border-radius: 1rem;
     margin: 10px 0;
 }
 
