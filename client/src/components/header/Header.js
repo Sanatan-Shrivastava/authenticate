@@ -27,7 +27,7 @@ function Header() {
         </Link>
         <ul className="dropdown">
           <li>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile">Update Profile</Link>
           </li>
           <li>
             <Link to="/" onClick={handleLogout}>
