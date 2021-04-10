@@ -23,10 +23,11 @@ const userSchema = new mongoose.Schema({
     },
     avatar: {
         type: String,
-        default: "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"
+        default: "https://res.cloudinary.com/dzfxgqozf/image/upload/v1618035656/download_1_ydsjlc.jpg"
     }
 }, {
     timestamps: true
 })
+
 
 module.exports = mongoose.model("Users", userSchema)
